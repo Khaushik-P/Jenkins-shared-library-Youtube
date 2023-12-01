@@ -1,4 +1,4 @@
-@Library ('my-shared-library-youtube') _
+@Library('Jenkins-shared-library1') _
 
 def COLOR_MAP=[
     'FAILURE':'danger',
