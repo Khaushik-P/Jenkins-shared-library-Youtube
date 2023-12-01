@@ -18,14 +18,18 @@ pipeline{
         nodejs 'node16'
     }
     environment{
-        SCANNER_HOME=tool 'sonar-scanner'
+        SCANNER_HOME=tool 'sonar-server'
     }
     stages{
         stage('Clean Workspace'){
+            steps{
             cleanWorkspace()
+            }
         }
         stage('Git Checkout'){
-            cleanWorkspace('')
+            steps{
+            gitCheckout('https://github.com/Aj7Ay/Youtube-clone-app.git', 'main')
+            }
         }
         stage('Sonarqube Analysis'){
             when { expression{params.action='create'}}
