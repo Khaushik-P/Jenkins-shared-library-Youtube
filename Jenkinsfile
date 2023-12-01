@@ -6,7 +6,7 @@ def COLOR_MAP=[
 ]
 
 pipeline{
-    agents any
+    agent any
 
     parameters{
         choice(name:'action' , choices:'create\ndelete' ,description:'Select create or destroy.')
