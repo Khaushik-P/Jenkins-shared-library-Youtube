@@ -13,14 +13,13 @@ pipeline{
         string(name:'DOCKER_HUB_USERNAME',defaultValue:khaushik14,description:'Docker hub username')
         string(name:'IMAGE_NAME',defaultValue:youtube,description:'Docker image name')
     }
-        tools{
+    tools{
         jdk 'jdk17'
         nodejs 'node16'
     }
     environment{
-        SCANNER_HOME='sonar-scanner'
+        SCANNER_HOME=tool 'sonar-scanner'
     }
-
     stages{
         stage('Clean Workspace'){
             cleanWorkspace()
@@ -104,6 +103,7 @@ pipeline{
             }
         }
     }
+}
      post {
     always {
         echo 'Slack Notifications'
