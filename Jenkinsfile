@@ -1,8 +1,8 @@
 @Library ('my-shared-library-youtube') _
 
 def COLOR_MAP=[
-    'FAILIURE'='danger',
-    'SUCCESS'='good'
+    'FAILURE':'danger',
+    'SUCCESS':'good'
 ]
 
 pipeline{
