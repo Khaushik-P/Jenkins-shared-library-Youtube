@@ -28,7 +28,7 @@ pipeline{
         }
         stage('Git Checkout'){
             steps{
-            gitCheckout('https://github.com/Khaushik-P/Youtube-app-Devops.git', 'main')
+            gitCheckout('https://github.com/adrianhajdin/project_youtube_clone.git', 'main')
             }
         }
         // stage('sonarqube Analysis'){
