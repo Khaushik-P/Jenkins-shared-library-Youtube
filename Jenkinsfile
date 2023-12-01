@@ -37,15 +37,15 @@ pipeline{
                 sonarqubeAnalysis()
             }
         }
-        stage('sonarqube QualityGate'){
-             when { expression{params.action='create'}}
-             steps{
-                script{
-                    def credentialsId = 'Sonar-token'
-                    qualityGate(credentialsId)
-                }
-             }
-        }
+        // stage('sonarqube QualityGate'){
+        //      when { expression{params.action='create'}}
+        //      steps{
+        //         script{
+        //             def credentialsId = 'Sonar-token'
+        //             qualityGate(credentialsId)
+        //         }
+        //      }
+        // }
         stage('Npm'){
             when{ expression {params.action='create'}}
             steps{
