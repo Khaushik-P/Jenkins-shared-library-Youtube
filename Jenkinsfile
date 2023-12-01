@@ -1,7 +1,7 @@
 @Library ('my-shared-library-youtube') _
 
 def COLOR_MAP=[
-    'FAILIURE'='danger'
+    'FAILIURE'='danger',
     'SUCCESS'='good'
 ]
 
