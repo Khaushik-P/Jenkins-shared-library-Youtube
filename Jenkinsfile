@@ -31,28 +31,28 @@ pipeline{
             gitCheckout('https://github.com/Aj7Ay/Youtube-clone-app.git', 'main')
             }
         }
-        stage('sonarqube Analysis'){
-        when { expression { params.action == 'create'}}    
-            steps{
-                script{
-                sonarqubeAnalysis()
-                }
-            }
-        }
-        stage('sonarqube QualityGate'){
-             when { expression{params.action='create'}}
-             steps{
-                script{
-                    waitForQualityGate abortPipeline: false, credentialsId: 'Sonar-token'
-                }
-             }
-        }
-        stage('Npm'){
-            when{ expression {params.action='create'}}
-            steps{
-                npmInstall()
-            }
-        }
+        // stage('sonarqube Analysis'){
+        // when { expression { params.action == 'create'}}    
+        //     steps{
+        //         script{
+        //         sonarqubeAnalysis()
+        //         }
+        //     }
+        // }
+        // stage('sonarqube QualityGate'){
+        //      when { expression{params.action='create'}}
+        //      steps{
+        //         script{
+        //             waitForQualityGate abortPipeline: false, credentialsId: 'Sonar-token'
+        //         }
+        //      }
+        // }
+        // stage('Npm'){
+        //     when{ expression {params.action='create'}}
+        //     steps{
+        //         npmInstall()
+        //     }
+        // }
         stage('Trivy File Scan'){
             when { expression { params.action='create'}}
             steps{
