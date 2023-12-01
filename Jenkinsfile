@@ -10,8 +10,8 @@ pipeline{
 
     parameters{
         choice(name:'action' , choices:'create\ndelete' ,description:'Select create or destroy.')
-        string(name:'DOCKER_HUB_USERNAME',defaultValue:khaushik14,description:'Docker hub username')
-        string(name:'IMAGE_NAME',defaultValue:youtube,description:'Docker image name')
+        string(name:'DOCKER_HUB_USERNAME',defaultValue:'khaushik14',description:'Docker hub username')
+        string(name:'IMAGE_NAME',defaultValue:'youtube',description:'Docker image name')
     }
     tools{
         jdk 'jdk17'
