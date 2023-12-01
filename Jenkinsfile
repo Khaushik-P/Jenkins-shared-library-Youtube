@@ -31,12 +31,12 @@ pipeline{
             gitCheckout('https://github.com/Aj7Ay/Youtube-clone-app.git', 'main')
             }
         }
-        stage('sonarqube Analysis'){
-        when { expression { params.action == 'create'}}    
-            steps{
-                sonarqubeAnalysis()
-            }
-        }
+        // stage('sonarqube Analysis'){
+        // when { expression { params.action == 'create'}}    
+        //     steps{
+        //         sonarqubeAnalysis()
+        //     }
+        // }
         // stage('sonarqube QualityGate'){
         //      when { expression{params.action='create'}}
         //      steps{
