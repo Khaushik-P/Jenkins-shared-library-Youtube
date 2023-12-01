@@ -17,7 +17,7 @@ pipeline{
         jdk 'jdk17'
         nodejs 'node16'
     }
-    environment{
+    environment {
         SCANNER_HOME=tool 'sonar-scanner'
     }
     stages{
@@ -31,8 +31,8 @@ pipeline{
             gitCheckout('https://github.com/Aj7Ay/Youtube-clone-app.git', 'main')
             }
         }
-        stage('Sonarqube Analysis'){
-            when { expression{params.action='create'}}
+        stage('sonarqube Analysis'){
+        when { expression { params.action == 'create'}}    
             steps{
                 sonarqubeAnalysis()
             }
